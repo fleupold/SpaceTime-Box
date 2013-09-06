@@ -18,6 +18,7 @@
 		084B801117DA70C900482C70 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 084B800617DA70C900482C70 /* AFURLConnectionOperation.m */; };
 		084B801217DA70C900482C70 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 084B800817DA70C900482C70 /* AFXMLRequestOperation.m */; };
 		084B801317DA70C900482C70 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 084B800A17DA70C900482C70 /* UIImageView+AFNetworking.m */; };
+		084B801917DA8AC700482C70 /* SpaceTimeLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 084B801817DA8AC700482C70 /* SpaceTimeLocation.m */; };
 		C5FAFD321760286600636C39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5FAFD311760286600636C39 /* QuartzCore.framework */; };
 		E127CF621745849100D9D39E /* BoxAuthorizationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E127CF611745849100D9D39E /* BoxAuthorizationNavigationController.m */; };
 		E4FADA41172CFE480052AD11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4FADA40172CFE480052AD11 /* UIKit.framework */; };
@@ -109,6 +110,8 @@
 		084B800817DA70C900482C70 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		084B800917DA70C900482C70 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		084B800A17DA70C900482C70 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		084B801717DA8AC700482C70 /* SpaceTimeLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpaceTimeLocation.h; path = BoxSDKSampleApp/SpaceTimeLocation.h; sourceTree = "<group>"; };
+		084B801817DA8AC700482C70 /* SpaceTimeLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpaceTimeLocation.m; path = BoxSDKSampleApp/SpaceTimeLocation.m; sourceTree = "<group>"; };
 		C5FAFD311760286600636C39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E127CF601745849100D9D39E /* BoxAuthorizationNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxAuthorizationNavigationController.h; sourceTree = "<group>"; };
 		E127CF611745849100D9D39E /* BoxAuthorizationNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxAuthorizationNavigationController.m; sourceTree = "<group>"; };
@@ -201,6 +204,8 @@
 		E4FADA34172CFE480052AD11 = {
 			isa = PBXGroup;
 			children = (
+				084B801717DA8AC700482C70 /* SpaceTimeLocation.h */,
+				084B801817DA8AC700482C70 /* SpaceTimeLocation.m */,
 				084B7FF717DA70C900482C70 /* AFNetworking */,
 				084B7FF217DA6D7500482C70 /* SpaceTimeSDK.h */,
 				084B7FF317DA6D7500482C70 /* SpaceTimeSDK.m */,
@@ -411,6 +416,7 @@
 				084B801117DA70C900482C70 /* AFURLConnectionOperation.m in Sources */,
 				084B801217DA70C900482C70 /* AFXMLRequestOperation.m in Sources */,
 				084B801317DA70C900482C70 /* UIImageView+AFNetworking.m in Sources */,
+				084B801917DA8AC700482C70 /* SpaceTimeLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

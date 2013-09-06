@@ -7,14 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SpaceTimeLocation.h"
+#import "AFHTTPClient.h"
 
 @interface SpaceTimeSDK : NSObject
 
 @property NSURL *url;
 @property NSSet *availableFileNames;
+@property NSMutableArray *locations;
+@property AFHTTPClient *client;
 
 +(SpaceTimeSDK *)sharedSDK;
 -(void)loadAvailableFiles;
+-(void)loadLocations;
+-(void)uploadFile: (NSString *)filename forLocation: (SpaceTimeLocation *)location;
 -(void)setURLFromString: (NSString *)urlString;
 
 @end

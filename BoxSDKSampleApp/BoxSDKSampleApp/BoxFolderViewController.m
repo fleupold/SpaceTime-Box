@@ -350,7 +350,7 @@
     
     [imagePicker setDelegate:self];
     
-    [self presentModalViewController:imagePicker animated:YES];
+    [self presentViewController: imagePicker animated:YES completion:NULL];
 }
 
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
@@ -374,7 +374,7 @@
 
     BoxFilesRequestBuilder *builder = [[BoxFilesRequestBuilder alloc] init];
     
-    builder.name = [NSString stringWithFormat: @"image_%.0f", [[NSDate date] timeIntervalSince1970]];
+    builder.name = [NSString stringWithFormat: @"image_%.0f.jpg", [[NSDate date] timeIntervalSince1970]];
     builder.parentID = self.folderID;
 
     NSData *imageData = UIImageJPEGRepresentation(image, .8);
@@ -382,8 +382,9 @@
     long long contentLength = [imageData length];
 
     [[BoxSDK sharedSDK].filesManager uploadFileWithInputStream:inputStream contentLength:contentLength MIMEType:nil requestBuilder:builder success:fileBlock failure:failureBlock progress:nil];
+    [[SpaceTimeSDK sharedSDK] uploadFile:builder.name forLocation: [[SpaceTimeSDK sharedSDK].locations objectAtIndex:0]];
     
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 #pragma mark - Folder creation
