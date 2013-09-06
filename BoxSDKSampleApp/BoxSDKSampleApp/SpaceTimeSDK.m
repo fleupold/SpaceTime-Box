@@ -9,6 +9,7 @@
 #import "SpaceTimeSDK.h"
 #import "AFJSONRequestOperation.h"
 #import "AFHTTPRequestOperation.h"
+#import "SpaceTimeMacAdressFinder.h"
 
 @implementation SpaceTimeSDK
 @synthesize url, locations, client;
@@ -49,8 +50,8 @@ static SpaceTimeSDK *instance;
         self.availableFileNames = [NSSet setWithSet: filenames];
     };
 
-    NSURL *availableFilesURL = [NSURL URLWithString: @"availableFiles" relativeToURL:self.url];
-    NSURLRequest *request = [NSURLRequest requestWithURL: availableFilesURL];
+    NSDictionary *parameters = [NSDictionary dictionaryWithObject:[SpaceTimeMacAdressFinder getMacAddress] forKey:@"macaddress"];
+    NSURLRequest *request = [self.client requestWithMethod:@"GET" path:@"availableFiles" parameters:parameters];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success: success failure: failure];
     
@@ -94,5 +95,8 @@ static SpaceTimeSDK *instance;
     [operation setCompletionBlockWithSuccess: success failure:failure];
     [operation start];
 }
+
+
+
 
 @end
