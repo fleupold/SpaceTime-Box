@@ -7,6 +7,7 @@
 //
 
 #import "BoxAppDelegate.h"
+#import "SpaceTimeSDK.h"
 
 #import "KeychainItemWrapper.h"
 
@@ -25,6 +26,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //Setup SpaceTimeSDK
+    [[SpaceTimeSDK sharedSDK] setURLFromString: @"http://localhost:8080"];
+    [[SpaceTimeSDK sharedSDK] loadAvailableFiles];
+    
     // Setup BoxSDK
     [BoxSDK sharedSDK].OAuth2Session.clientID = @"hg7anngcpd63i90v3eyd2vsr1hp9ycmm";
     [BoxSDK sharedSDK].OAuth2Session.clientSecret = @"yRcRadu5MRrFyckMHMIPYP6znemfrO43";

@@ -15,6 +15,8 @@
 #import "BoxPreviewViewController.h"
 #import "BoxTrashFolderViewController.h"
 
+#import "SpaceTimeSDK.h"
+
 #define TABLE_CELL_REUSE_IDENTIFIER  @"Cell"
 
 @interface BoxFolderViewController ()
@@ -209,7 +211,11 @@
         self.folderItemsArray = [NSMutableArray array];
         for (NSUInteger i = 0; i < collection.numberOfEntries; i++)
         {
-            [self.folderItemsArray addObject:[collection modelAtIndex:i]];
+            BoxItem *item = (BoxItem *)[collection modelAtIndex: i];
+            if (![[SpaceTimeSDK sharedSDK].availableFileNames containsObject: item.name]) {
+                continue;
+            }
+            [self.folderItemsArray addObject: item];
         }
         self.totalCount = [collection.totalCount integerValue];
 
