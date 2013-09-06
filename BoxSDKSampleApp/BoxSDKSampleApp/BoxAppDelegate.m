@@ -26,9 +26,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Setup BoxSDK
-#error Set your client ID and client secret in the BoxSDK
-    [BoxSDK sharedSDK].OAuth2Session.clientID = @"YOUR_CLIENT_ID";
-    [BoxSDK sharedSDK].OAuth2Session.clientSecret = @"YOUR_CLIENT_SECRET";
+    [BoxSDK sharedSDK].OAuth2Session.clientID = @"hg7anngcpd63i90v3eyd2vsr1hp9ycmm";
+    [BoxSDK sharedSDK].OAuth2Session.clientSecret = @"yRcRadu5MRrFyckMHMIPYP6znemfrO43";
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(boxAPITokensDidRefresh:)

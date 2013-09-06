@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		084B7FE917DA655200482C70 /* libBoxSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 084B7FDE17DA654400482C70 /* libBoxSDK.a */; };
 		C5FAFD321760286600636C39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5FAFD311760286600636C39 /* QuartzCore.framework */; };
 		E127CF621745849100D9D39E /* BoxAuthorizationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E127CF611745849100D9D39E /* BoxAuthorizationNavigationController.m */; };
 		E4FADA41172CFE480052AD11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4FADA40172CFE480052AD11 /* UIKit.framework */; };
@@ -23,7 +24,6 @@
 		E4FADA69172CFF290052AD11 /* BoxPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FADA62172CFF290052AD11 /* BoxPreviewViewController.m */; };
 		E4FADA6A172CFF290052AD11 /* BoxTrashFolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FADA64172CFF290052AD11 /* BoxTrashFolderViewController.m */; };
 		E4FADA6B172CFF290052AD11 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FADA66172CFF290052AD11 /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E4FADA77172D052C0052AD11 /* libBoxSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4FADA72172D04A50052AD11 /* libBoxSDK.a */; };
 		E4FADA79172D055F0052AD11 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4FADA78172D055F0052AD11 /* Security.framework */; };
 		E4FADA7D172D07070052AD11 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4FADA7C172D07070052AD11 /* MobileCoreServices.framework */; };
 		E4FADA83172D084B0052AD11 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4FADA7F172D084B0052AD11 /* MainStoryboard_iPad.storyboard */; };
@@ -32,30 +32,44 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C5FAFD2E1760281A00636C39 /* PBXContainerItemProxy */ = {
+		084B7FDD17DA654400482C70 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E4FADA6C172D04A50052AD11 /* BoxSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E4081D8D1758728900F6D6AA;
-			remoteInfo = BoxSDKResources;
-		};
-		E4FADA71172D04A50052AD11 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E4FADA6C172D04A50052AD11 /* BoxSDK.xcodeproj */;
+			containerPortal = 084B7FD517DA654300482C70 /* BoxSDK.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = E470433B16D41DC500FED29A;
 			remoteInfo = BoxSDK;
 		};
-		E4FADA73172D04A50052AD11 /* PBXContainerItemProxy */ = {
+		084B7FDF17DA654400482C70 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E4FADA6C172D04A50052AD11 /* BoxSDK.xcodeproj */;
+			containerPortal = 084B7FD517DA654300482C70 /* BoxSDK.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = E470434C16D41DC500FED29A;
 			remoteInfo = BoxSDKTests;
 		};
-		E4FADA75172D04FD0052AD11 /* PBXContainerItemProxy */ = {
+		084B7FE117DA654400482C70 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E4FADA6C172D04A50052AD11 /* BoxSDK.xcodeproj */;
+			containerPortal = 084B7FD517DA654300482C70 /* BoxSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4081D8D1758728900F6D6AA;
+			remoteInfo = BoxSDKResources;
+		};
+		084B7FE317DA654400482C70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 084B7FD517DA654300482C70 /* BoxSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F0E5E2E717A78AEF00153646;
+			remoteInfo = BoxCocoaSDK;
+		};
+		084B7FE517DA654400482C70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 084B7FD517DA654300482C70 /* BoxSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F0E5E2FD17A78AEF00153646;
+			remoteInfo = BoxCocoaSDKTests;
+		};
+		084B7FE717DA654E00482C70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 084B7FD517DA654300482C70 /* BoxSDK.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = E470433A16D41DC500FED29A;
 			remoteInfo = BoxSDK;
@@ -63,6 +77,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		084B7FD517DA654300482C70 /* BoxSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BoxSDK.xcodeproj; path = "../box-ios-sdk-v2/BoxSDK.xcodeproj"; sourceTree = "<group>"; };
 		C5FAFD311760286600636C39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E127CF601745849100D9D39E /* BoxAuthorizationNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxAuthorizationNavigationController.h; sourceTree = "<group>"; };
 		E127CF611745849100D9D39E /* BoxAuthorizationNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxAuthorizationNavigationController.m; sourceTree = "<group>"; };
@@ -89,7 +104,6 @@
 		E4FADA64172CFF290052AD11 /* BoxTrashFolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxTrashFolderViewController.m; sourceTree = "<group>"; };
 		E4FADA65172CFF290052AD11 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		E4FADA66172CFF290052AD11 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
-		E4FADA6C172D04A50052AD11 /* BoxSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BoxSDK.xcodeproj; path = ../vendor/BoxSDK/BoxSDK.xcodeproj; sourceTree = "<group>"; };
 		E4FADA78172D055F0052AD11 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		E4FADA7C172D07070052AD11 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		E4FADA80172D084B0052AD11 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
@@ -102,8 +116,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				084B7FE917DA655200482C70 /* libBoxSDK.a in Frameworks */,
 				C5FAFD321760286600636C39 /* QuartzCore.framework in Frameworks */,
-				E4FADA77172D052C0052AD11 /* libBoxSDK.a in Frameworks */,
 				E4FADA41172CFE480052AD11 /* UIKit.framework in Frameworks */,
 				E4FADA43172CFE480052AD11 /* Foundation.framework in Frameworks */,
 				E4FADA45172CFE480052AD11 /* CoreGraphics.framework in Frameworks */,
@@ -115,10 +129,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		084B7FD617DA654300482C70 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				084B7FDE17DA654400482C70 /* libBoxSDK.a */,
+				084B7FE017DA654400482C70 /* BoxSDKTests.octest */,
+				084B7FE217DA654400482C70 /* BoxSDKResources.bundle */,
+				084B7FE417DA654400482C70 /* BoxCocoaSDK.framework */,
+				084B7FE617DA654400482C70 /* BoxCocoaSDKTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		E4FADA34172CFE480052AD11 = {
 			isa = PBXGroup;
 			children = (
-				E4FADA6C172D04A50052AD11 /* BoxSDK.xcodeproj */,
+				084B7FD517DA654300482C70 /* BoxSDK.xcodeproj */,
 				E4FADA46172CFE480052AD11 /* BoxSDKSampleApp */,
 				E4FADA3F172CFE480052AD11 /* Frameworks */,
 				E4FADA3E172CFE480052AD11 /* Products */,
@@ -184,16 +210,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E4FADA6D172D04A50052AD11 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E4FADA72172D04A50052AD11 /* libBoxSDK.a */,
-				E4FADA74172D04A50052AD11 /* BoxSDKTests.octest */,
-				C5FAFD2F1760281A00636C39 /* BoxSDKResources.bundle */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		E4FADA7E172D08370052AD11 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,7 +233,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				E4FADA76172D04FD0052AD11 /* PBXTargetDependency */,
+				084B7FE817DA654E00482C70 /* PBXTargetDependency */,
 			);
 			name = BoxSDKSampleApp;
 			productName = BoxSDKSampleApp;
@@ -246,8 +262,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = E4FADA6D172D04A50052AD11 /* Products */;
-					ProjectRef = E4FADA6C172D04A50052AD11 /* BoxSDK.xcodeproj */;
+					ProductGroup = 084B7FD617DA654300482C70 /* Products */;
+					ProjectRef = 084B7FD517DA654300482C70 /* BoxSDK.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -258,25 +274,39 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		C5FAFD2F1760281A00636C39 /* BoxSDKResources.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = BoxSDKResources.bundle;
-			remoteRef = C5FAFD2E1760281A00636C39 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		E4FADA72172D04A50052AD11 /* libBoxSDK.a */ = {
+		084B7FDE17DA654400482C70 /* libBoxSDK.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libBoxSDK.a;
-			remoteRef = E4FADA71172D04A50052AD11 /* PBXContainerItemProxy */;
+			remoteRef = 084B7FDD17DA654400482C70 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E4FADA74172D04A50052AD11 /* BoxSDKTests.octest */ = {
+		084B7FE017DA654400482C70 /* BoxSDKTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = BoxSDKTests.octest;
-			remoteRef = E4FADA73172D04A50052AD11 /* PBXContainerItemProxy */;
+			remoteRef = 084B7FDF17DA654400482C70 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		084B7FE217DA654400482C70 /* BoxSDKResources.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BoxSDKResources.bundle;
+			remoteRef = 084B7FE117DA654400482C70 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		084B7FE417DA654400482C70 /* BoxCocoaSDK.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BoxCocoaSDK.framework;
+			remoteRef = 084B7FE317DA654400482C70 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		084B7FE617DA654400482C70 /* BoxCocoaSDKTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BoxCocoaSDKTests.octest;
+			remoteRef = 084B7FE517DA654400482C70 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -317,10 +347,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E4FADA76172D04FD0052AD11 /* PBXTargetDependency */ = {
+		084B7FE817DA654E00482C70 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BoxSDK;
-			targetProxy = E4FADA75172D04FD0052AD11 /* PBXContainerItemProxy */;
+			targetProxy = 084B7FE717DA654E00482C70 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
