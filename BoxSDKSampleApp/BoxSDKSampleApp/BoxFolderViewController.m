@@ -24,7 +24,6 @@
 - (void)drillDownToFolderID:(NSString *)folderID name:(NSString *)name;
 - (void)displayPreviewWebviewWithFileID:(NSString *)fileID filename:(NSString *)filename;
 - (void)displayTrashFolder:(id)sender;
-- (void)performSampleUpload:(id)sender;
 - (void)addFolderButtonClicked:(id)sender;
 - (void)logoutButtonClicked:(id)sender;
 
@@ -72,7 +71,7 @@
     self.navigationItem.rightBarButtonItem = trashButton;
 
     self.logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleBordered target:self action:@selector(logoutButtonClicked:)];
-    UIBarButtonItem *uploadButton = [[UIBarButtonItem alloc] initWithTitle:@"Sample Upload" style:UIBarButtonItemStyleBordered target:self action:@selector(performSampleUpload:)];
+    UIBarButtonItem *uploadButton = [[UIBarButtonItem alloc] initWithTitle:@"Sample Upload" style:UIBarButtonItemStyleBordered target:self action:@selector(loadCameraView)];
     UIBarButtonItem *addFolderButton = [[UIBarButtonItem alloc] initWithTitle:@"Add Folder" style:UIBarButtonItemStyleBordered target:self action:@selector(addFolderButtonClicked:)];
 
     self.navigationController.toolbarHidden = NO;
@@ -335,9 +334,28 @@
     [self presentViewController:modalViewController animated:YES completion:nil];
 }
 
-#pragma mark - Upload
-- (void)performSampleUpload:(id)sender
+#pragma mark - ImagePicker
+
+-(void)loadCameraView {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    }
+    else
+    {
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    }
+    
+    [imagePicker setDelegate:self];
+    
+    [self presentModalViewController:imagePicker animated:YES];
+}
+
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     BoxFileBlock fileBlock = ^(BoxFile *file)
     {
         [self fetchFolderItemsWithFolderID:self.folderID name:self.navigationController.title];
@@ -355,15 +373,17 @@
     };
 
     BoxFilesRequestBuilder *builder = [[BoxFilesRequestBuilder alloc] init];
-    builder.name = @"Logo_Box_Blue_Whitebg_480x480.jpg";
+    
+    builder.name = [NSString stringWithFormat: @"image_%.0f", [[NSDate date] timeIntervalSince1970]];
     builder.parentID = self.folderID;
 
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Logo_Box_Blue_Whitebg_480x480.jpg" ofType:nil];
-    NSInputStream *inputStream = [NSInputStream inputStreamWithFileAtPath:path];
-    NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil];
-    long long contentLength = [[fileAttributes objectForKey:NSFileSize] longLongValue];
+    NSData *imageData = UIImageJPEGRepresentation(image, .8);
+    NSInputStream *inputStream = [[NSInputStream alloc] initWithData: imageData];
+    long long contentLength = [imageData length];
 
     [[BoxSDK sharedSDK].filesManager uploadFileWithInputStream:inputStream contentLength:contentLength MIMEType:nil requestBuilder:builder success:fileBlock failure:failureBlock progress:nil];
+    
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark - Folder creation
