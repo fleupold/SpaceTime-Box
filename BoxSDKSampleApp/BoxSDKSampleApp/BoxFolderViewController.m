@@ -422,7 +422,7 @@
 
 -(NSDictionary *)logos {
     if (!_logos)
-        _logos = [[NSDictionary alloc] initWithObjectsAndKeys: @"pdf_icon", @"pdf", @"jpg_icon", @"jpg", nil];
+        _logos = [[NSDictionary alloc] initWithObjectsAndKeys: @"pdf_icon", @"pdf", @"jpg_icon.gif", @"jpg", nil];
     return _logos;
     
 }
