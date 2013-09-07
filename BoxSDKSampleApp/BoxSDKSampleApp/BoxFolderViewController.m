@@ -41,6 +41,7 @@
 @synthesize totalCount = _totalCount;
 @synthesize folderID = _folderID;
 @synthesize folderName = _folderName;
+@synthesize logos = _logos;
 
 + (instancetype)folderViewFromStoryboardWithFolderID:(NSString *)folderID folderName:(NSString *)folderName;
 {
@@ -68,10 +69,8 @@
     [self.refreshControl addTarget:self action:@selector(tableViewDidPullToRefresh) forControlEvents:UIControlEventValueChanged];
 
     UIBarButtonItem *uploadButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(loadCameraView)];
-    UIBarButtonItem *reloadButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadFiles)];
     self.navigationItem.rightBarButtonItem = uploadButton;
-    //self.navigationItem.leftBarButtonItem = reloadButton;
-
+    
     // Handle logged in
     [[NSNotificationCenter defaultCenter] addObserver:self
                                             selector:@selector(boxTokensDidRefresh:)
@@ -152,7 +151,21 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TABLE_CELL_REUSE_IDENTIFIER];
     }
-    [cell.textLabel setText:[NSString stringWithFormat:@"%@ - %@", item.type, item.name]];
+    if ([item.type isEqualToString:BoxAPIItemTypeFolder]) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.imageView.image = [UIImage imageNamed: @"folder_icon.png"];
+    }
+    else {
+        
+        
+        NSString *logoString = [self.logos valueForKey:[item.name pathExtension]];
+        if (!logoString) {
+            logoString = @"default_icon";
+        }
+        cell.imageView.image = [UIImage imageNamed: logoString];
+    }
+    
+    [cell.textLabel setText:[NSString stringWithFormat:@"%@", item.name]];
 
     return cell;
 }
@@ -405,6 +418,13 @@
         [self fetchFolderItemsWithFolderID:self.folderID name:self.folderName];
         [self.tableView reloadData];
     }
+}
+
+-(NSDictionary *)logos {
+    if (!_logos)
+        _logos = [[NSDictionary alloc] initWithObjectsAndKeys: @"pdf_icon", @"pdf", @"jpg_icon", @"jpg", nil];
+    return _logos;
+    
 }
 
 @end

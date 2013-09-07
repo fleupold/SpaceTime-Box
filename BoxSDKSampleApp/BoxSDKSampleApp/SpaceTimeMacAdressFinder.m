@@ -58,7 +58,7 @@
         memcpy(&macAddress, socketStruct->sdl_data + socketStruct->sdl_nlen, 6);
         
         // Read from char array into a string object, into traditional Mac address format
-        NSString *macAddressString = [NSString stringWithFormat:@"%02X:%02X:%02X:%02X:%02X:%02X",
+        NSString *macAddressString = [NSString stringWithFormat:@"%02X%02X%02X%02X%02X%02X",
                                       macAddress[0], macAddress[1], macAddress[2], macAddress[3], macAddress[4], macAddress[5]];
         NSLog(@"Mac Address: %@", macAddressString);
         

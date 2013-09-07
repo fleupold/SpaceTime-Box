@@ -21,6 +21,10 @@
 		084B801917DA8AC700482C70 /* SpaceTimeLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 084B801817DA8AC700482C70 /* SpaceTimeLocation.m */; };
 		084B801C17DAA28F00482C70 /* SpaceTimeMacAdressFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 084B801B17DAA28F00482C70 /* SpaceTimeMacAdressFinder.m */; };
 		084B801F17DAA46100482C70 /* SpaceTimeLocationPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 084B801E17DAA46100482C70 /* SpaceTimeLocationPickerViewController.m */; };
+		084B802817DB187B00482C70 /* default_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 084B802617DB187B00482C70 /* default_icon.png */; };
+		084B802917DB187B00482C70 /* folder_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 084B802717DB187B00482C70 /* folder_icon.png */; };
+		084B802B17DB19E600482C70 /* jpg_icon.gif in Resources */ = {isa = PBXBuildFile; fileRef = 084B802A17DB19E600482C70 /* jpg_icon.gif */; };
+		084B802D17DB1BC300482C70 /* pdf_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 084B802C17DB1BC300482C70 /* pdf_icon.png */; };
 		C5FAFD321760286600636C39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5FAFD311760286600636C39 /* QuartzCore.framework */; };
 		E127CF621745849100D9D39E /* BoxAuthorizationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E127CF611745849100D9D39E /* BoxAuthorizationNavigationController.m */; };
 		E4FADA41172CFE480052AD11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4FADA40172CFE480052AD11 /* UIKit.framework */; };
@@ -118,6 +122,10 @@
 		084B801B17DAA28F00482C70 /* SpaceTimeMacAdressFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpaceTimeMacAdressFinder.m; path = BoxSDKSampleApp/SpaceTimeMacAdressFinder.m; sourceTree = "<group>"; };
 		084B801D17DAA46100482C70 /* SpaceTimeLocationPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpaceTimeLocationPickerViewController.h; path = BoxSDKSampleApp/SpaceTimeLocationPickerViewController.h; sourceTree = "<group>"; };
 		084B801E17DAA46100482C70 /* SpaceTimeLocationPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpaceTimeLocationPickerViewController.m; path = BoxSDKSampleApp/SpaceTimeLocationPickerViewController.m; sourceTree = "<group>"; };
+		084B802617DB187B00482C70 /* default_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_icon.png; sourceTree = "<group>"; };
+		084B802717DB187B00482C70 /* folder_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_icon.png; sourceTree = "<group>"; };
+		084B802A17DB19E600482C70 /* jpg_icon.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = jpg_icon.gif; sourceTree = "<group>"; };
+		084B802C17DB1BC300482C70 /* pdf_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pdf_icon.png; sourceTree = "<group>"; };
 		C5FAFD311760286600636C39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E127CF601745849100D9D39E /* BoxAuthorizationNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxAuthorizationNavigationController.h; sourceTree = "<group>"; };
 		E127CF611745849100D9D39E /* BoxAuthorizationNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxAuthorizationNavigationController.m; sourceTree = "<group>"; };
@@ -273,6 +281,10 @@
 		E4FADA47172CFE480052AD11 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				084B802617DB187B00482C70 /* default_icon.png */,
+				084B802C17DB1BC300482C70 /* pdf_icon.png */,
+				084B802A17DB19E600482C70 /* jpg_icon.gif */,
+				084B802717DB187B00482C70 /* folder_icon.png */,
 				E4FADA87172EFC310052AD11 /* Logo_Box_Blue_Whitebg_480x480.jpg */,
 				E4FADA48172CFE480052AD11 /* BoxSDKSampleApp-Info.plist */,
 				E4FADA49172CFE480052AD11 /* InfoPlist.strings */,
@@ -398,6 +410,10 @@
 				E4FADA83172D084B0052AD11 /* MainStoryboard_iPad.storyboard in Resources */,
 				E4FADA84172D084B0052AD11 /* MainStoryboard_iPhone.storyboard in Resources */,
 				E4FADA88172EFC310052AD11 /* Logo_Box_Blue_Whitebg_480x480.jpg in Resources */,
+				084B802817DB187B00482C70 /* default_icon.png in Resources */,
+				084B802917DB187B00482C70 /* folder_icon.png in Resources */,
+				084B802B17DB19E600482C70 /* jpg_icon.gif in Resources */,
+				084B802D17DB1BC300482C70 /* pdf_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

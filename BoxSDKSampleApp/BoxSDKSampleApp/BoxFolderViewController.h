@@ -20,6 +20,7 @@
 @property (nonatomic, readwrite, assign) NSInteger totalCount;
 @property (nonatomic, readwrite, strong) NSString *folderID;
 @property (nonatomic, readwrite, strong) NSString *folderName;
+@property NSDictionary *logos;
 
 + (instancetype)folderViewFromStoryboardWithFolderID:(NSString *)folderID folderName:(NSString *)folderName;
 
