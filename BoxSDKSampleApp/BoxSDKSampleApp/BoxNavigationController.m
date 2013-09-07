@@ -8,7 +8,9 @@
 
 #import "BoxNavigationController.h"
 #import "BoxAuthorizationNavigationController.h"
-#import "BoxFolderViewController.h"
+#import "BoxFolderViewController.h"\
+
+#import "SpaceTimeSDK.h"
 
 @interface BoxNavigationController ()
 
@@ -38,6 +40,13 @@
     // attempt to heartbeat. This will succeed if we successfully refresh
     // on failure, the BoxOAuth2SessionDidReceiveRefreshErrorNotification notification will be triggered
     [self boxAPIHeartbeat];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    if ([SpaceTimeSDK sharedSDK].openedViaURL) {
+        [[self tabBarController] setSelectedIndex: 1];
+        [SpaceTimeSDK sharedSDK].openedViaURL = NO;
+    }
 }
 
 - (void)dealloc

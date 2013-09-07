@@ -34,7 +34,9 @@
     [super viewDidLoad];
     self.buttonLocationMapping = [NSMutableDictionary dictionary];
 	// Do any additional setup after loading the view.
-    
+}
+
+-(void)viewDidAppear:(BOOL)animated {
     for (SpaceTimeLocation *location in [[SpaceTimeSDK sharedSDK] locations]) {
         UIButton *locationMarker = [UIButton buttonWithType: UIButtonTypeCustom];
         if (location.is_visited) {

@@ -55,6 +55,11 @@
     return YES;
 }
 
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    [SpaceTimeSDK sharedSDK].openedViaURL = YES;
+    return YES;
+}
+
 - (void)boxAPITokensDidRefresh:(NSNotification *)notification
 {
     BoxOAuth2Session *OAuth2Session = (BoxOAuth2Session *) notification.object;

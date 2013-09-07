@@ -14,7 +14,7 @@
 #import "SpaceTimeFile.h"
 
 @implementation SpaceTimeSDK
-@synthesize url, locations, client;
+@synthesize url, locations, client, openedViaURL;
 
 static SpaceTimeSDK *instance;
 

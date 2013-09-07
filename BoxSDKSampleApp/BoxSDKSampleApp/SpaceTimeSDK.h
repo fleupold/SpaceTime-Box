@@ -16,6 +16,7 @@
 @property NSSet *availableFileNames;
 @property NSMutableArray *locations;
 @property AFHTTPClient *client;
+@property BOOL openedViaURL;
 
 +(SpaceTimeSDK *)sharedSDK;
 -(void)loadAvailableFiles;
