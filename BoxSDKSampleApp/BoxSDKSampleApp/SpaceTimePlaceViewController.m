@@ -10,6 +10,9 @@
 #import "SpaceTimeLocation.h"
 #import "SpaceTimeSDK.h"
 
+#import "BoxFolderViewController.h"
+#import "BoxNavigationController.h"
+
 @interface SpaceTimePlaceViewController ()
 
 @end
@@ -51,12 +54,21 @@
 -(void)markerPressed: (UIButton *)button {
     SpaceTimeLocation *location = [self.buttonLocationMapping objectForKey: [NSString stringWithFormat: @"%d", button.tag]];
     if (location.is_visited) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"Congrats" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [alertView show];
+        BoxFolderViewController *boxFolderVC = [[BoxFolderViewController alloc] init];
+        boxFolderVC.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissBoxVC)];
+        boxFolderVC.location = location;
+        BoxNavigationController *boxNavVC = [[BoxNavigationController alloc] initWithRootViewController:boxFolderVC];
+        [self presentViewController:boxNavVC animated:YES completion:nil];
     } else {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Location locked" message:@"You haven't been at this location yet" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        NSString *message = [NSString stringWithFormat:@"You haven't been at %@ yet", location.description];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Location locked" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alertView show];
     }
+}
+
+-(void)dismissBoxVC
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

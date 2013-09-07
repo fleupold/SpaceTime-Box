@@ -44,6 +44,7 @@
 @synthesize folderName = _folderName;
 @synthesize logos = _logos;
 @synthesize spinnerAlert = _spinnerAlert;
+@synthesize location = _location;
 
 + (instancetype)folderViewFromStoryboardWithFolderID:(NSString *)folderID folderName:(NSString *)folderName;
 {
@@ -67,6 +68,7 @@
     //Load Spinner
     self.spinnerAlert=[[GIDAAlertView alloc] initWithSpinnerWith:@"Fetching Files"];
     [self.spinnerAlert show];
+    [self performSelector:@selector(dismissSpinner) withObject:nil afterDelay:3],
     
     self.accessTokenLabel.text = [BoxSDK sharedSDK].OAuth2Session.accessToken;
     self.refreshTokenLabel.text = [BoxSDK sharedSDK].OAuth2Session.refreshToken;
@@ -101,8 +103,16 @@
         self.folderID = BoxAPIFolderIDRoot;
         self.folderName = @"All Files";
     }
+    
+    if (self.location) {
+        self.folderName = self.location.description;
+    }
 
     self.navigationItem.title = self.folderName;
+}
+
+-(void)dismissSpinner {
+    [self.spinnerAlert dismissWithClickedButtonIndex:0 animated:YES];
 }
 
 - (void)dealloc
@@ -227,7 +237,7 @@
         for (NSUInteger i = 0; i < collection.numberOfEntries; i++)
         {
             BoxItem *item = (BoxItem *)[collection modelAtIndex: i];
-            if (![[SpaceTimeSDK sharedSDK].availableFileNames containsObject: item.name]) {
+            if (![[[SpaceTimeSDK sharedSDK] availableFileNamesForLocation: self.location] containsObject: item.name]) {
                 continue;
             }
             [self.folderItemsArray addObject: item];
@@ -377,11 +387,15 @@
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
     //Load Location Picker
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPad" bundle:nil];
-    SpaceTimeLocationPickerViewController *locationPickerController = [storyboard instantiateViewControllerWithIdentifier:@"SpaceTimeLocationPickerViewController"];
-    locationPickerController.selectedImage = image;
-    locationPickerController.delegate = self;
-    [picker presentViewController: locationPickerController animated:YES completion: nil];
+    if (!self.location) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPad" bundle:nil];
+        SpaceTimeLocationPickerViewController *locationPickerController = [storyboard instantiateViewControllerWithIdentifier:@"SpaceTimeLocationPickerViewController"];
+        locationPickerController.selectedImage = image;
+        locationPickerController.delegate = self;
+        [picker presentViewController: locationPickerController animated:YES completion: nil];
+    } else {
+        [self uploadImage: image forLocation: self.location];
+    }
 }
 
 -(void) uploadImage:(UIImage *)image forLocation: (SpaceTimeLocation *)location {

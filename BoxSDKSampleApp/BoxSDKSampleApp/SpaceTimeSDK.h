@@ -19,6 +19,7 @@
 
 +(SpaceTimeSDK *)sharedSDK;
 -(void)loadAvailableFiles;
+-(NSSet *)availableFileNamesForLocation: (SpaceTimeLocation *)location;
 -(void)loadLocations;
 -(void)uploadFile: (NSString *)filename forLocation: (SpaceTimeLocation *)location;
 -(void)setURLFromString: (NSString *)urlString;

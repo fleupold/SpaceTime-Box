@@ -1,4 +1,4 @@
-//
+ //
 //  SpaceTimeSDK.m
 //  BoxSDKSampleApp
 //
@@ -10,6 +10,8 @@
 #import "AFJSONRequestOperation.h"
 #import "AFHTTPRequestOperation.h"
 #import "SpaceTimeMacAdressFinder.h"
+
+#import "SpaceTimeFile.h"
 
 @implementation SpaceTimeSDK
 @synthesize url, locations, client;
@@ -43,8 +45,10 @@ static SpaceTimeSDK *instance;
     void (^success)(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) = ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSLog(@"Content: %@", [JSON description]);
         NSMutableSet *filenames = [NSMutableSet set];
-        for (NSString *filename in [JSON valueForKey: @"filename"]) {
-            [filenames addObject: filename];
+        for (NSDictionary *dict in [JSON valueForKey: @"filename"]) {
+            SpaceTimeFile *file = [[SpaceTimeFile alloc] initWithString: [dict valueForKey: @"filename"]];
+            file.location = [[dict valueForKey: @"location"] integerValue];
+            [filenames addObject: file];
         }
         self.availableFileNames = [NSSet setWithSet: filenames];
     };
@@ -88,14 +92,24 @@ static SpaceTimeSDK *instance;
         NSLog(@"SpaceTimeSDK Successfully registered file %@ for location %@", filename, location.description);
     };
     
-    NSDictionary *parameters = [[NSDictionary alloc] initWithObjectsAndKeys: filename, @"filename", location.location_id, @"location", nil];
+    NSDictionary *parameters = [[NSDictionary alloc] initWithObjectsAndKeys: filename, @"filename", [NSNumber numberWithInteger: location.location_id], @"location", nil];
     NSURLRequest *request = [self.client requestWithMethod:@"GET" path:@"upload" parameters:parameters];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest: request];
     [operation setCompletionBlockWithSuccess: success failure:failure];
     [operation start];
 }
 
-
+-(NSSet *)availableFileNamesForLocation: (SpaceTimeLocation *)location {
+    if (!location) {
+        return self.availableFileNames;
+    }
+    NSMutableSet *filtered = [NSMutableSet set];
+    for (SpaceTimeFile *filename in self.availableFileNames) {
+        if (filename.location == location.location_id)
+            [filtered addObject: filename];
+    }
+    return filtered;
+}
 
 
 @end
