@@ -6,7 +6,7 @@ import requests
 import json
 import MySQLdb as mdb
 
-con = mdb.connect('localhost', 'root', 'yeppt2013!', 'spacetime', use_unicode = True);
+con = mdb.connect('db.f4.htw-berlin.de', 's0525904', 'yeppt2013!', '_s0525904__spacetime', use_unicode = True);
 
 
 
