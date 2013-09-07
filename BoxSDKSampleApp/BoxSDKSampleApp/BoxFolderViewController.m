@@ -421,7 +421,7 @@
     builder.name = [NSString stringWithFormat: @"image_%.0f.jpg", [[NSDate date] timeIntervalSince1970]];
     builder.parentID = self.folderID;
 
-    NSData *imageData = UIImageJPEGRepresentation(image, .8);
+    NSData *imageData = UIImageJPEGRepresentation(image, .4);
     NSInputStream *inputStream = [[NSInputStream alloc] initWithData: imageData];
     long long contentLength = [imageData length];
 

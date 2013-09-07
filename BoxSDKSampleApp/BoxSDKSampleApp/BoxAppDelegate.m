@@ -27,7 +27,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //Setup SpaceTimeSDK
-    [[SpaceTimeSDK sharedSDK] setURLFromString: @"http://192.168.208.134:8080"];
+    [[SpaceTimeSDK sharedSDK] setURLFromString: @"http://sailingteamjjone.de:8080"];
     [[SpaceTimeSDK sharedSDK] loadAvailableFiles];
     
     // Setup BoxSDK
