@@ -97,7 +97,7 @@ def index(request):
             #url = 'http://sms77.de/gateway/?u=eVoDesign&p=19058c741457f13eb397607f6d4d56d5&to=00491608071336&text=Sie wurden fuer die Location+' + row[0] + '+freigeschaltet&type=quality&from=spacetime'
             url = 'https://tropo.developergarden.com/api/sessions?action=create&token=4e427865446b4f6f77466e4b4a786d61536b626d57556b625a4472414664424950614671495453614a494c71&msg=Sie wurden fuer die Location+' + row[0] + '+freigeschaltet HIER FOLGT CUSTOM URL&number=4917699664428'
             print url
-            #requests.get(url)
+            requests.get(url)
             #print test.text
             #print row[0]
             
