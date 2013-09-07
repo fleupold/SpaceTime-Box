@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="cDK-iN-P2b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="8tG-Sc-tNC">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -9,7 +9,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="FolderTableView" id="RcT-l9-HQu" customClass="BoxFolderViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fiF-6g-Njg">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="q19-FM-mvy">
@@ -83,10 +83,45 @@
             </objects>
             <point key="canvasLocation" x="3262" y="-406"/>
         </scene>
-        <!--Box Navigation Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="WTk-zh-Hbi">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="8tG-Sc-tNC" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="vx6-eA-neG">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="cDK-iN-P2b" kind="relationship" relationship="viewControllers" id="Le7-Il-h4h"/>
+                        <segue destination="a8z-Hv-Ko7" kind="relationship" relationship="viewControllers" id="7w1-YG-N2K"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YGa-7X-lUm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="869" y="-343"/>
+        </scene>
+        <!--Space Time Place View Controller - Item-->
+        <scene sceneID="J2h-jg-zXu">
+            <objects>
+                <viewController id="a8z-Hv-Ko7" customClass="SpaceTimePlaceViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ARm-Kc-hjD">
+                        <rect key="frame" x="0.0" y="20" width="768" height="955"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Knz-GS-tGY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xeL-wi-y4K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2413" y="-1887"/>
+        </scene>
+        <!--Box Navigation Controller - Item-->
         <scene sceneID="3hh-ih-dXA">
             <objects>
                 <navigationController definesPresentationContext="YES" id="cDK-iN-P2b" customClass="BoxNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="PwK-sO-bwg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="R5D-UF-hrC">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -236,6 +271,9 @@
             <relationships>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
+        </class>
+        <class className="SpaceTimePlaceViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpaceTimePlaceViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
