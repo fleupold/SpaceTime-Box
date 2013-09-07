@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SpaceTimeLocationPickerViewController.h"
 
 #define IS_IPAD() (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
-@interface BoxFolderViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface BoxFolderViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, SpaceTimeLocationPickerDelegate>
 
 @property (nonatomic, readwrite, strong) IBOutlet UILabel *accessTokenLabel;
 @property (nonatomic, readwrite, strong) IBOutlet UILabel *refreshTokenLabel;

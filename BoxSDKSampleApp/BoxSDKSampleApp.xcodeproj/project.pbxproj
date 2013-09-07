@@ -20,6 +20,7 @@
 		084B801317DA70C900482C70 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 084B800A17DA70C900482C70 /* UIImageView+AFNetworking.m */; };
 		084B801917DA8AC700482C70 /* SpaceTimeLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 084B801817DA8AC700482C70 /* SpaceTimeLocation.m */; };
 		084B801C17DAA28F00482C70 /* SpaceTimeMacAdressFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 084B801B17DAA28F00482C70 /* SpaceTimeMacAdressFinder.m */; };
+		084B801F17DAA46100482C70 /* SpaceTimeLocationPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 084B801E17DAA46100482C70 /* SpaceTimeLocationPickerViewController.m */; };
 		C5FAFD321760286600636C39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5FAFD311760286600636C39 /* QuartzCore.framework */; };
 		E127CF621745849100D9D39E /* BoxAuthorizationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E127CF611745849100D9D39E /* BoxAuthorizationNavigationController.m */; };
 		E4FADA41172CFE480052AD11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4FADA40172CFE480052AD11 /* UIKit.framework */; };
@@ -115,6 +116,8 @@
 		084B801817DA8AC700482C70 /* SpaceTimeLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpaceTimeLocation.m; path = BoxSDKSampleApp/SpaceTimeLocation.m; sourceTree = "<group>"; };
 		084B801A17DAA28F00482C70 /* SpaceTimeMacAdressFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpaceTimeMacAdressFinder.h; path = BoxSDKSampleApp/SpaceTimeMacAdressFinder.h; sourceTree = "<group>"; };
 		084B801B17DAA28F00482C70 /* SpaceTimeMacAdressFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpaceTimeMacAdressFinder.m; path = BoxSDKSampleApp/SpaceTimeMacAdressFinder.m; sourceTree = "<group>"; };
+		084B801D17DAA46100482C70 /* SpaceTimeLocationPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpaceTimeLocationPickerViewController.h; path = BoxSDKSampleApp/SpaceTimeLocationPickerViewController.h; sourceTree = "<group>"; };
+		084B801E17DAA46100482C70 /* SpaceTimeLocationPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpaceTimeLocationPickerViewController.m; path = BoxSDKSampleApp/SpaceTimeLocationPickerViewController.m; sourceTree = "<group>"; };
 		C5FAFD311760286600636C39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E127CF601745849100D9D39E /* BoxAuthorizationNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxAuthorizationNavigationController.h; sourceTree = "<group>"; };
 		E127CF611745849100D9D39E /* BoxAuthorizationNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxAuthorizationNavigationController.m; sourceTree = "<group>"; };
@@ -207,6 +210,8 @@
 		E4FADA34172CFE480052AD11 = {
 			isa = PBXGroup;
 			children = (
+				084B801D17DAA46100482C70 /* SpaceTimeLocationPickerViewController.h */,
+				084B801E17DAA46100482C70 /* SpaceTimeLocationPickerViewController.m */,
 				084B801A17DAA28F00482C70 /* SpaceTimeMacAdressFinder.h */,
 				084B801B17DAA28F00482C70 /* SpaceTimeMacAdressFinder.m */,
 				084B801717DA8AC700482C70 /* SpaceTimeLocation.h */,
@@ -423,6 +428,7 @@
 				084B801317DA70C900482C70 /* UIImageView+AFNetworking.m in Sources */,
 				084B801917DA8AC700482C70 /* SpaceTimeLocation.m in Sources */,
 				084B801C17DAA28F00482C70 /* SpaceTimeMacAdressFinder.m in Sources */,
+				084B801F17DAA46100482C70 /* SpaceTimeLocationPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

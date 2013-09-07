@@ -67,15 +67,10 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(tableViewDidPullToRefresh) forControlEvents:UIControlEventValueChanged];
 
-    UIBarButtonItem *trashButton = [[UIBarButtonItem alloc] initWithTitle:@"Trash" style:UIBarButtonItemStylePlain target:self action:@selector(displayTrashFolder:)];
-    self.navigationItem.rightBarButtonItem = trashButton;
-
-    self.logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleBordered target:self action:@selector(logoutButtonClicked:)];
-    UIBarButtonItem *uploadButton = [[UIBarButtonItem alloc] initWithTitle:@"Sample Upload" style:UIBarButtonItemStyleBordered target:self action:@selector(loadCameraView)];
-    UIBarButtonItem *addFolderButton = [[UIBarButtonItem alloc] initWithTitle:@"Add Folder" style:UIBarButtonItemStyleBordered target:self action:@selector(addFolderButtonClicked:)];
-
-    self.navigationController.toolbarHidden = NO;
-    [self setToolbarItems:@[self.logoutButton, uploadButton, addFolderButton] animated:YES];
+    UIBarButtonItem *uploadButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(loadCameraView)];
+    UIBarButtonItem *reloadButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadFiles)];
+    self.navigationItem.rightBarButtonItem = uploadButton;
+    //self.navigationItem.leftBarButtonItem = reloadButton;
 
     // Handle logged in
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -356,6 +351,17 @@
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    //Load Location Picker
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPad" bundle:nil];
+    SpaceTimeLocationPickerViewController *locationPickerController = [storyboard instantiateViewControllerWithIdentifier:@"SpaceTimeLocationPickerViewController"];
+    locationPickerController.selectedImage = image;
+    locationPickerController.delegate = self;
+    [picker presentViewController: locationPickerController animated:YES completion: nil];
+}
+
+-(void) uploadImage:(UIImage *)image forLocation: (SpaceTimeLocation *)location {
+    [self dismissViewControllerAnimated:YES completion:nil];
     BoxFileBlock fileBlock = ^(BoxFile *file)
     {
         [self fetchFolderItemsWithFolderID:self.folderID name:self.navigationController.title];
@@ -382,65 +388,22 @@
     long long contentLength = [imageData length];
 
     [[BoxSDK sharedSDK].filesManager uploadFileWithInputStream:inputStream contentLength:contentLength MIMEType:nil requestBuilder:builder success:fileBlock failure:failureBlock progress:nil];
-    [[SpaceTimeSDK sharedSDK] uploadFile:builder.name forLocation: [[SpaceTimeSDK sharedSDK].locations objectAtIndex:0]];
-    
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    [[SpaceTimeSDK sharedSDK] uploadFile:builder.name forLocation: location];
 }
 
-#pragma mark - Folder creation
-- (void)addFolderButtonClicked:(id)sender
+#pragma mark - Shake Gesture
+
+- (BOOL)canBecomeFirstResponder
 {
-    UIAlertView *folderNamePrompt = [[UIAlertView alloc] initWithTitle:@"Add Folder" message:@"Name:" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-
-    folderNamePrompt.alertViewStyle = UIAlertViewStylePlainTextInput;
-
-    [folderNamePrompt show];
+    return YES;
 }
 
-#pragma mark - Logout
-- (void)logoutButtonClicked:(id)sender
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
-    // clear Tokens from memory
-    [BoxSDK sharedSDK].OAuth2Session.accessToken = @"INVALID_ACCESS_TOKEN";
-    [BoxSDK sharedSDK].OAuth2Session.refreshToken = @"INVALID_REFRESH_TOKEN";
-
-    // clear tokens from keychain
-    BoxAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-    [appDelegate setRefreshTokenInKeychain:@"INVALID_REFRESH_TOKEN"];
-
-    [(BoxNavigationController *)self.navigationController boxAPIHeartbeat];
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == alertView.firstOtherButtonIndex)
-    {
-        UITextField *nameField = [alertView textFieldAtIndex:0];
-        BoxFolderBlock success = ^(BoxFolder *folder)
-        {
-            [self fetchFolderItemsWithFolderID:self.folderID name:self.navigationItem.title];
-        };
-
-        BoxAPIJSONFailureBlock failure = ^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, NSDictionary *JSONDictionary)
-        {
-            NSLog(@"folder create failed with error code: %i", response.statusCode);
-            if (response.statusCode == 409)
-            {
-                dispatch_sync(dispatch_get_main_queue(), ^{
-                    UIAlertView *conflictAlert = [[UIAlertView alloc] initWithTitle:@"Name conflict" message:[NSString stringWithFormat:@"A folder already exists with the name %@.\n\nNew name:", nameField.text] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-
-                    conflictAlert.alertViewStyle = UIAlertViewStylePlainTextInput;
-
-                    [conflictAlert show];
-                });
-            }
-        };
-
-        BoxFoldersRequestBuilder *builder = [[BoxFoldersRequestBuilder alloc] init];
-        builder.name = nameField.text;
-        builder.parentID = self.folderID;
-
-        [[BoxSDK sharedSDK].foldersManager createFolderWithRequestBuilder:builder success:success failure:failure];
+    if (motion == UIEventSubtypeMotionShake) {
+        NSLog(@"Reload!");
+        [self fetchFolderItemsWithFolderID:self.folderID name:self.folderName];
+        [self.tableView reloadData];
     }
 }
 

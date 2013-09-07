@@ -19,7 +19,6 @@ static SpaceTimeSDK *instance;
 +(SpaceTimeSDK *)sharedSDK {
     if(!instance) {
         instance = [[SpaceTimeSDK alloc] init];
-        [instance heartbeat];
     }
     return instance;
 }
@@ -27,6 +26,7 @@ static SpaceTimeSDK *instance;
 - (void)setURLFromString: (NSString *)urlString {
     self.url =  [NSURL URLWithString: urlString];
     self.client = [AFHTTPClient clientWithBaseURL: self.url];
+    [instance heartbeat];
 }
 
 -(void)heartbeat {
@@ -44,14 +44,14 @@ static SpaceTimeSDK *instance;
     void (^success)(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) = ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSLog(@"Content: %@", [JSON description]);
         NSMutableSet *filenames = [NSMutableSet set];
-        for (NSString *filename in [JSON valueForKey: @"files"]) {
+        for (NSString *filename in [JSON valueForKey: @"filename"]) {
             [filenames addObject: filename];
         }
         self.availableFileNames = [NSSet setWithSet: filenames];
     };
 
     NSDictionary *parameters = [NSDictionary dictionaryWithObject:[SpaceTimeMacAdressFinder getMacAddress] forKey:@"macaddress"];
-    NSURLRequest *request = [self.client requestWithMethod:@"GET" path:@"availableFiles" parameters:parameters];
+    NSURLRequest *request = [self.client requestWithMethod:@"GET" path:@"files" parameters:parameters];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success: success failure: failure];
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="c6S-uf-3yR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="c6S-uf-3yR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -27,54 +27,9 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="mBW-Om-hdk">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="83"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="access" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5B7-ye-sax">
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="53" id="Sy4-Lh-ntD"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="refresh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFh-cR-F9t">
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="&lt;access token>" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRT-eb-oFb">
-                                    <constraints>
-                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" type="user" id="KXf-eR-VQu"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="&lt;refresh token>" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePz-LZ-hkv">
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="nRT-eb-oFb" firstAttribute="top" secondItem="mBW-Om-hdk" secondAttribute="top" constant="20" symbolic="YES" type="default" id="6BT-oQ-0QA"/>
-                                <constraint firstItem="mFh-cR-F9t" firstAttribute="leading" secondItem="mBW-Om-hdk" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ASb-XQ-WZn"/>
-                                <constraint firstAttribute="bottom" secondItem="ePz-LZ-hkv" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Clw-1U-5BE"/>
-                                <constraint firstItem="5B7-ye-sax" firstAttribute="top" secondItem="mBW-Om-hdk" secondAttribute="top" constant="20" symbolic="YES" type="default" id="EKY-qN-CE2"/>
-                                <constraint firstAttribute="bottom" secondItem="mFh-cR-F9t" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="EZ1-xn-QRL"/>
-                                <constraint firstAttribute="trailing" secondItem="nRT-eb-oFb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="FeA-mr-2X3"/>
-                                <constraint firstItem="ePz-LZ-hkv" firstAttribute="leading" secondItem="nRT-eb-oFb" secondAttribute="leading" type="default" id="eW7-c6-o1G"/>
-                                <constraint firstAttribute="trailing" secondItem="ePz-LZ-hkv" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="o7b-sz-AxE"/>
-                                <constraint firstItem="nRT-eb-oFb" firstAttribute="leading" secondItem="5B7-ye-sax" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="q3t-Iq-5Tc"/>
-                                <constraint firstItem="5B7-ye-sax" firstAttribute="leading" secondItem="mBW-Om-hdk" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="uf7-LP-Awc"/>
-                            </constraints>
-                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" id="hEp-j3-iWA">
-                                <rect key="frame" x="0.0" y="105" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -89,14 +44,46 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="yr7-Dw-zXd"/>
-                    <connections>
-                        <outlet property="accessTokenLabel" destination="nRT-eb-oFb" id="AO0-RA-jFy"/>
-                        <outlet property="refreshTokenLabel" destination="ePz-LZ-hkv" id="ywa-hZ-e2E"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-98" y="493"/>
+        </scene>
+        <!--Space Time Location Picker View Controller-->
+        <scene sceneID="99O-ju-gam">
+            <objects>
+                <viewController restorationIdentifier="SpaceTimeLocationPickerViewController" storyboardIdentifier="SpaceTimeLocationPickerViewController" id="y8j-tA-CEb" customClass="SpaceTimeLocationPickerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XXI-vJ-8i2">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JOL-QK-ohh">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="9ep-MK-xvP">
+                                <items>
+                                    <navigationItem title="Select location" id="HSG-Mo-0O0"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9ep-MK-xvP" firstAttribute="leading" secondItem="XXI-vJ-8i2" secondAttribute="leading" type="default" id="4Ry-VK-TLw"/>
+                            <constraint firstItem="9ep-MK-xvP" firstAttribute="trailing" secondItem="XXI-vJ-8i2" secondAttribute="trailing" type="default" id="HJf-cg-NA8"/>
+                            <constraint firstItem="JOL-QK-ohh" firstAttribute="trailing" secondItem="XXI-vJ-8i2" secondAttribute="trailing" type="default" id="iOt-cg-Yfl"/>
+                            <constraint firstItem="JOL-QK-ohh" firstAttribute="leading" secondItem="XXI-vJ-8i2" secondAttribute="leading" type="default" id="iot-GW-XYu"/>
+                            <constraint firstItem="JOL-QK-ohh" firstAttribute="bottom" secondItem="XXI-vJ-8i2" secondAttribute="bottom" type="default" id="pbu-Ql-PNa"/>
+                            <constraint firstItem="9ep-MK-xvP" firstAttribute="top" secondItem="XXI-vJ-8i2" secondAttribute="top" type="default" id="tj3-t3-UmW"/>
+                            <constraint firstItem="JOL-QK-ohh" firstAttribute="top" secondItem="9ep-MK-xvP" secondAttribute="bottom" type="default" id="tod-9S-8MZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="JOL-QK-ohh" id="ITv-ws-C7L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PZx-Qk-5fe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="50" y="1312"/>
         </scene>
         <!--Box Trash Folder View Controller-->
         <scene sceneID="6Np-ay-VjD">
@@ -187,15 +174,18 @@
         </class>
         <class className="BoxNavigationController" superclassName="UINavigationController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BoxNavigationController.h"/>
-            <relationships>
-                <relationship kind="action" name="clickLoginButton:"/>
-            </relationships>
         </class>
         <class className="BoxTrashFolderViewController" superclassName="BoxFolderViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BoxTrashFolderViewController.h"/>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SpaceTimeLocationPickerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpaceTimeLocationPickerViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
