@@ -83,7 +83,7 @@ def index(request):
     sql_insert = """INSERT IGNORE INTO user_location(macaddress, location_id) VALUES ("""+"'"+ macaddress+ "'" +""","""+location+""")"""
     sql_lookup = "Select * from user_location where macaddress = " + "'" + macaddress + "'" + " and location_id =" + location    
     sql_location = "Select name from location where id =" + location
-    sql_number = "Select telefonnr from user a where a.macaddress =" + macaddress    
+    sql_number = "Select telefonnr from user a where a.macaddress ='" + macaddress  + "'"
     with con:
         cur.execute(sql_lookup)
         if len(cur.fetchall())==0:
