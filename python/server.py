@@ -37,6 +37,7 @@ def index(request):
     for row in rows:
         loc.append({"id" : row[0], "description" : row[1], "is_visited":row[2]})
         #loc.append({"files" : row})
+        print
 
     return Response(json.dumps({'location':loc}),content_type='application/json')
 
@@ -99,7 +100,7 @@ def index(request):
             number = cur.fetchall()[0][0]         
             
             #url = 'http://sms77.de/gateway/?u=eVoDesign&p=19058c741457f13eb397607f6d4d56d5&to=00491608071336&text=Sie wurden fuer die Location+' + row[0] + '+freigeschaltet&type=quality&from=spacetime'
-            url = 'https://tropo.developergarden.com/api/sessions?action=create&token=4e427865446b4f6f77466e4b4a786d61536b626d57556b625a4472414664424950614671495453614a494c71&msg=Die Location  ' + row[0] + ' wurde freigeschaltet spacetime-box://zuhause/&number='+number
+            url = 'https://tropo.developergarden.com/api/sessions?action=create&token=4e427865446b4f6f77466e4b4a786d61536b626d57556b625a4472414664424950614671495453614a494c71&msg=Die Location ' + row[0] + ' wurde freigeschaltet spacetime-box://content/&number='+number
             print url
             requests.get(url)
             #print test.text
