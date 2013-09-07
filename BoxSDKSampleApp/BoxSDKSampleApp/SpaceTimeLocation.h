@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface SpaceTimeLocation : NSObject
-@property NSInteger id;
+@property NSInteger location_id;
 @property NSString *description;
+@property BOOL is_visited;
+@property CGPoint coordinate;
 
 +(SpaceTimeLocation *)locationFromJSON: (id)JSON;
 @end

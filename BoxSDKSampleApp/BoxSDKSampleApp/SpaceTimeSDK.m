@@ -66,13 +66,13 @@ static SpaceTimeSDK *instance;
     void (^success)(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) = ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSLog(@"Content: %@", [JSON description]);
         self.locations = [NSMutableArray array];
-        for (NSString *location in [JSON valueForKey: @"location"]) {
+        for (NSDictionary *location in [JSON valueForKey: @"location"]) {
             [self.locations addObject: [SpaceTimeLocation locationFromJSON: location]];
         }
     };
     
-    NSURL *locationsURL = [NSURL URLWithString: @"location" relativeToURL:self.url];
-    NSURLRequest *request = [NSURLRequest requestWithURL: locationsURL];
+    NSDictionary *parameters = [NSDictionary dictionaryWithObject:[SpaceTimeMacAdressFinder getMacAddress] forKey:@"macaddress"];
+    NSURLRequest *request = [self.client requestWithMethod:@"GET" path:@"location" parameters:parameters];
     
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success: success failure: failure];
     
@@ -88,7 +88,7 @@ static SpaceTimeSDK *instance;
         NSLog(@"SpaceTimeSDK Successfully registered file %@ for location %@", filename, location.description);
     };
     
-    NSDictionary *parameters = [[NSDictionary alloc] initWithObjectsAndKeys: filename, @"filename", location.id, @"location", nil];
+    NSDictionary *parameters = [[NSDictionary alloc] initWithObjectsAndKeys: filename, @"filename", location.location_id, @"location", nil];
     NSURLRequest *request = [self.client requestWithMethod:@"GET" path:@"upload" parameters:parameters];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest: request];
     [operation setCompletionBlockWithSuccess: success failure:failure];
