@@ -35,6 +35,7 @@
 		084B808717DB38DD00482C70 /* folder_tab.png in Resources */ = {isa = PBXBuildFile; fileRef = 084B808617DB38DD00482C70 /* folder_tab.png */; };
 		084B808A17DB3B1F00482C70 /* marker_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 084B808817DB3B1F00482C70 /* marker_red.png */; };
 		084B808B17DB3B1F00482C70 /* marker_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 084B808917DB3B1F00482C70 /* marker_green.png */; };
+		084B808E17DB4C7200482C70 /* SpaceTimeAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 084B808D17DB4C7200482C70 /* SpaceTimeAboutViewController.m */; };
 		C5FAFD321760286600636C39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5FAFD311760286600636C39 /* QuartzCore.framework */; };
 		E127CF621745849100D9D39E /* BoxAuthorizationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E127CF611745849100D9D39E /* BoxAuthorizationNavigationController.m */; };
 		E4FADA41172CFE480052AD11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4FADA40172CFE480052AD11 /* UIKit.framework */; };
@@ -148,6 +149,8 @@
 		084B808617DB38DD00482C70 /* folder_tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_tab.png; sourceTree = "<group>"; };
 		084B808817DB3B1F00482C70 /* marker_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker_red.png; sourceTree = "<group>"; };
 		084B808917DB3B1F00482C70 /* marker_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker_green.png; sourceTree = "<group>"; };
+		084B808C17DB4C7100482C70 /* SpaceTimeAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpaceTimeAboutViewController.h; path = BoxSDKSampleApp/SpaceTimeAboutViewController.h; sourceTree = "<group>"; };
+		084B808D17DB4C7200482C70 /* SpaceTimeAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpaceTimeAboutViewController.m; path = BoxSDKSampleApp/SpaceTimeAboutViewController.m; sourceTree = "<group>"; };
 		C5FAFD311760286600636C39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E127CF601745849100D9D39E /* BoxAuthorizationNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxAuthorizationNavigationController.h; sourceTree = "<group>"; };
 		E127CF611745849100D9D39E /* BoxAuthorizationNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxAuthorizationNavigationController.m; sourceTree = "<group>"; };
@@ -240,6 +243,8 @@
 		E4FADA34172CFE480052AD11 = {
 			isa = PBXGroup;
 			children = (
+				084B808C17DB4C7100482C70 /* SpaceTimeAboutViewController.h */,
+				084B808D17DB4C7200482C70 /* SpaceTimeAboutViewController.m */,
 				084B807917DB2A4500482C70 /* SpaceTimePlaceViewController.h */,
 				084B807A17DB2A4500482C70 /* SpaceTimePlaceViewController.m */,
 				084B807617DB22F800482C70 /* GIDAAlertView.h */,
@@ -489,6 +494,7 @@
 				084B801F17DAA46100482C70 /* SpaceTimeLocationPickerViewController.m in Sources */,
 				084B807817DB22FA00482C70 /* GIDAAlertView.m in Sources */,
 				084B807B17DB2A4600482C70 /* SpaceTimePlaceViewController.m in Sources */,
+				084B808E17DB4C7200482C70 /* SpaceTimeAboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
