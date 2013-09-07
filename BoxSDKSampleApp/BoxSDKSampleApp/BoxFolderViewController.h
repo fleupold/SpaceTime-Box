@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SpaceTimeLocationPickerViewController.h"
+#import "GIDAAlertView.h"
 
 #define IS_IPAD() (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
@@ -21,6 +22,7 @@
 @property (nonatomic, readwrite, strong) NSString *folderID;
 @property (nonatomic, readwrite, strong) NSString *folderName;
 @property NSDictionary *logos;
+@property GIDAAlertView *spinnerAlert;
 
 + (instancetype)folderViewFromStoryboardWithFolderID:(NSString *)folderID folderName:(NSString *)folderName;
 

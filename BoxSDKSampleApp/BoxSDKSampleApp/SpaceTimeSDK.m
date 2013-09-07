@@ -32,7 +32,6 @@ static SpaceTimeSDK *instance;
 -(void)heartbeat {
     [self loadAvailableFiles];
     [self loadLocations];
-    [self performSelector:@selector(heartbeat) withObject:nil afterDelay:3];
 }
 
 -(void)loadAvailableFiles

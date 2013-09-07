@@ -17,6 +17,7 @@
 
 #import "SpaceTimeSDK.h"
 
+
 #define TABLE_CELL_REUSE_IDENTIFIER  @"Cell"
 
 @interface BoxFolderViewController ()
@@ -42,6 +43,7 @@
 @synthesize folderID = _folderID;
 @synthesize folderName = _folderName;
 @synthesize logos = _logos;
+@synthesize spinnerAlert = _spinnerAlert;
 
 + (instancetype)folderViewFromStoryboardWithFolderID:(NSString *)folderID folderName:(NSString *)folderName;
 {
@@ -62,6 +64,10 @@
 
 - (void)viewDidLoad
 {
+    //Load Spinner
+    self.spinnerAlert=[[GIDAAlertView alloc] initWithSpinnerWith:@"Fetching Files"];
+    [self.spinnerAlert show];
+    
     self.accessTokenLabel.text = [BoxSDK sharedSDK].OAuth2Session.accessToken;
     self.refreshTokenLabel.text = [BoxSDK sharedSDK].OAuth2Session.refreshToken;
 
@@ -213,8 +219,10 @@
 
 - (void)fetchFolderItemsWithFolderID:(NSString *)folderID name:(NSString *)name
 {
+    [[SpaceTimeSDK sharedSDK] heartbeat];
     BoxCollectionBlock success = ^(BoxCollection *collection)
     {
+        [self.spinnerAlert dismissWithClickedButtonIndex:0 animated:YES];
         self.folderItemsArray = [NSMutableArray array];
         for (NSUInteger i = 0; i < collection.numberOfEntries; i++)
         {
@@ -248,6 +256,8 @@
 
 - (void)displayPreviewWebviewWithFileID:(NSString *)fileID filename:(NSString *)filename
 {
+    GIDAAlertView *previewSpinner=[[GIDAAlertView alloc] initWithSpinnerWith:@"Loading Preview"];
+    [previewSpinner show];
     NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentRootPath = [documentPaths objectAtIndex:0];
     NSString *path = [documentRootPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@-%@", fileID, filename]];
@@ -255,6 +265,7 @@
 
     BoxDownloadSuccessBlock successBlock = ^(NSString *downloadedFileID, long long expectedContentLength)
     {
+        [previewSpinner dismissWithClickedButtonIndex:0 animated:YES];
         NSLog(@"downloaded file - %@", fileID);
         NSString *blockPath = path;
         NSError *error;

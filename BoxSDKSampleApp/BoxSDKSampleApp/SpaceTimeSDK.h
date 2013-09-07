@@ -22,5 +22,6 @@
 -(void)loadLocations;
 -(void)uploadFile: (NSString *)filename forLocation: (SpaceTimeLocation *)location;
 -(void)setURLFromString: (NSString *)urlString;
+-(void)heartbeat;
 
 @end

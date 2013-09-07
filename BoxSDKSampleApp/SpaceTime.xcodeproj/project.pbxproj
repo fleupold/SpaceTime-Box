@@ -25,6 +25,9 @@
 		084B802917DB187B00482C70 /* folder_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 084B802717DB187B00482C70 /* folder_icon.png */; };
 		084B802B17DB19E600482C70 /* jpg_icon.gif in Resources */ = {isa = PBXBuildFile; fileRef = 084B802A17DB19E600482C70 /* jpg_icon.gif */; };
 		084B802D17DB1BC300482C70 /* pdf_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 084B802C17DB1BC300482C70 /* pdf_icon.png */; };
+		084B802F17DB1E4500482C70 /* spacetime@box.png in Resources */ = {isa = PBXBuildFile; fileRef = 084B802E17DB1E4500482C70 /* spacetime@box.png */; };
+		084B803117DB1E8200482C70 /* spacetime@box.png in Resources */ = {isa = PBXBuildFile; fileRef = 084B803017DB1E8200482C70 /* spacetime@box.png */; };
+		084B807817DB22FA00482C70 /* GIDAAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 084B807717DB22F900482C70 /* GIDAAlertView.m */; };
 		C5FAFD321760286600636C39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5FAFD311760286600636C39 /* QuartzCore.framework */; };
 		E127CF621745849100D9D39E /* BoxAuthorizationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E127CF611745849100D9D39E /* BoxAuthorizationNavigationController.m */; };
 		E4FADA41172CFE480052AD11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4FADA40172CFE480052AD11 /* UIKit.framework */; };
@@ -126,17 +129,21 @@
 		084B802717DB187B00482C70 /* folder_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = folder_icon.png; sourceTree = "<group>"; };
 		084B802A17DB19E600482C70 /* jpg_icon.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = jpg_icon.gif; sourceTree = "<group>"; };
 		084B802C17DB1BC300482C70 /* pdf_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pdf_icon.png; sourceTree = "<group>"; };
+		084B802E17DB1E4500482C70 /* spacetime@box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spacetime@box.png"; sourceTree = "<group>"; };
+		084B803017DB1E8200482C70 /* spacetime@box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spacetime@box.png"; sourceTree = "<group>"; };
+		084B807617DB22F800482C70 /* GIDAAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIDAAlertView.h; sourceTree = "<group>"; };
+		084B807717DB22F900482C70 /* GIDAAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIDAAlertView.m; sourceTree = "<group>"; };
 		C5FAFD311760286600636C39 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E127CF601745849100D9D39E /* BoxAuthorizationNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxAuthorizationNavigationController.h; sourceTree = "<group>"; };
 		E127CF611745849100D9D39E /* BoxAuthorizationNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxAuthorizationNavigationController.m; sourceTree = "<group>"; };
-		E4FADA3D172CFE480052AD11 /* BoxSDKSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoxSDKSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4FADA3D172CFE480052AD11 /* SpaceTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4FADA40172CFE480052AD11 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E4FADA42172CFE480052AD11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E4FADA44172CFE480052AD11 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		E4FADA48172CFE480052AD11 /* BoxSDKSampleApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BoxSDKSampleApp-Info.plist"; sourceTree = "<group>"; };
+		E4FADA48172CFE480052AD11 /* SpaceTime-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpaceTime-Info.plist"; sourceTree = "<group>"; };
 		E4FADA4A172CFE480052AD11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E4FADA4C172CFE480052AD11 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E4FADA4E172CFE480052AD11 /* BoxSDKSampleApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BoxSDKSampleApp-Prefix.pch"; sourceTree = "<group>"; };
+		E4FADA4E172CFE480052AD11 /* SpaceTime-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpaceTime-Prefix.pch"; sourceTree = "<group>"; };
 		E4FADA4F172CFE480052AD11 /* BoxAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoxAppDelegate.h; sourceTree = "<group>"; };
 		E4FADA50172CFE480052AD11 /* BoxAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoxAppDelegate.m; sourceTree = "<group>"; };
 		E4FADA52172CFE480052AD11 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -218,16 +225,19 @@
 		E4FADA34172CFE480052AD11 = {
 			isa = PBXGroup;
 			children = (
+				084B807617DB22F800482C70 /* GIDAAlertView.h */,
+				084B807717DB22F900482C70 /* GIDAAlertView.m */,
+				084B7FD517DA654300482C70 /* BoxSDK.xcodeproj */,
+				084B803017DB1E8200482C70 /* spacetime@box.png */,
 				084B801D17DAA46100482C70 /* SpaceTimeLocationPickerViewController.h */,
 				084B801E17DAA46100482C70 /* SpaceTimeLocationPickerViewController.m */,
 				084B801A17DAA28F00482C70 /* SpaceTimeMacAdressFinder.h */,
 				084B801B17DAA28F00482C70 /* SpaceTimeMacAdressFinder.m */,
 				084B801717DA8AC700482C70 /* SpaceTimeLocation.h */,
 				084B801817DA8AC700482C70 /* SpaceTimeLocation.m */,
-				084B7FF717DA70C900482C70 /* AFNetworking */,
 				084B7FF217DA6D7500482C70 /* SpaceTimeSDK.h */,
 				084B7FF317DA6D7500482C70 /* SpaceTimeSDK.m */,
-				084B7FD517DA654300482C70 /* BoxSDK.xcodeproj */,
+				084B7FF717DA70C900482C70 /* AFNetworking */,
 				E4FADA46172CFE480052AD11 /* BoxSDKSampleApp */,
 				E4FADA3F172CFE480052AD11 /* Frameworks */,
 				E4FADA3E172CFE480052AD11 /* Products */,
@@ -237,7 +247,7 @@
 		E4FADA3E172CFE480052AD11 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E4FADA3D172CFE480052AD11 /* BoxSDKSampleApp.app */,
+				E4FADA3D172CFE480052AD11 /* SpaceTime.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -281,15 +291,16 @@
 		E4FADA47172CFE480052AD11 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				084B802E17DB1E4500482C70 /* spacetime@box.png */,
 				084B802617DB187B00482C70 /* default_icon.png */,
 				084B802C17DB1BC300482C70 /* pdf_icon.png */,
 				084B802A17DB19E600482C70 /* jpg_icon.gif */,
 				084B802717DB187B00482C70 /* folder_icon.png */,
 				E4FADA87172EFC310052AD11 /* Logo_Box_Blue_Whitebg_480x480.jpg */,
-				E4FADA48172CFE480052AD11 /* BoxSDKSampleApp-Info.plist */,
+				E4FADA48172CFE480052AD11 /* SpaceTime-Info.plist */,
 				E4FADA49172CFE480052AD11 /* InfoPlist.strings */,
 				E4FADA4C172CFE480052AD11 /* main.m */,
-				E4FADA4E172CFE480052AD11 /* BoxSDKSampleApp-Prefix.pch */,
+				E4FADA4E172CFE480052AD11 /* SpaceTime-Prefix.pch */,
 				E4FADA52172CFE480052AD11 /* Default.png */,
 				E4FADA54172CFE480052AD11 /* Default@2x.png */,
 				E4FADA56172CFE480052AD11 /* Default-568h@2x.png */,
@@ -309,9 +320,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E4FADA3C172CFE480052AD11 /* BoxSDKSampleApp */ = {
+		E4FADA3C172CFE480052AD11 /* SpaceTime */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4FADA5A172CFE480052AD11 /* Build configuration list for PBXNativeTarget "BoxSDKSampleApp" */;
+			buildConfigurationList = E4FADA5A172CFE480052AD11 /* Build configuration list for PBXNativeTarget "SpaceTime" */;
 			buildPhases = (
 				E4FADA39172CFE480052AD11 /* Sources */,
 				E4FADA3A172CFE480052AD11 /* Frameworks */,
@@ -322,9 +333,9 @@
 			dependencies = (
 				084B7FE817DA654E00482C70 /* PBXTargetDependency */,
 			);
-			name = BoxSDKSampleApp;
+			name = SpaceTime;
 			productName = BoxSDKSampleApp;
-			productReference = E4FADA3D172CFE480052AD11 /* BoxSDKSampleApp.app */;
+			productReference = E4FADA3D172CFE480052AD11 /* SpaceTime.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -337,7 +348,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Box;
 			};
-			buildConfigurationList = E4FADA38172CFE480052AD11 /* Build configuration list for PBXProject "BoxSDKSampleApp" */;
+			buildConfigurationList = E4FADA38172CFE480052AD11 /* Build configuration list for PBXProject "SpaceTime" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -355,7 +366,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				E4FADA3C172CFE480052AD11 /* BoxSDKSampleApp */,
+				E4FADA3C172CFE480052AD11 /* SpaceTime */,
 			);
 		};
 /* End PBXProject section */
@@ -414,6 +425,8 @@
 				084B802917DB187B00482C70 /* folder_icon.png in Resources */,
 				084B802B17DB19E600482C70 /* jpg_icon.gif in Resources */,
 				084B802D17DB1BC300482C70 /* pdf_icon.png in Resources */,
+				084B802F17DB1E4500482C70 /* spacetime@box.png in Resources */,
+				084B803117DB1E8200482C70 /* spacetime@box.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +458,7 @@
 				084B801917DA8AC700482C70 /* SpaceTimeLocation.m in Sources */,
 				084B801C17DAA28F00482C70 /* SpaceTimeMacAdressFinder.m in Sources */,
 				084B801F17DAA46100482C70 /* SpaceTimeLocationPickerViewController.m in Sources */,
+				084B807817DB22FA00482C70 /* GIDAAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,11 +563,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BoxSDKSampleApp/BoxSDKSampleApp-Prefix.pch";
+				GCC_PREFIX_HEADER = "BoxSDKSampleApp/SpaceTime-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)";
-				INFOPLIST_FILE = "BoxSDKSampleApp/BoxSDKSampleApp-Info.plist";
+				INFOPLIST_FILE = "BoxSDKSampleApp/SpaceTime-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SpaceTime;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -563,11 +577,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BoxSDKSampleApp/BoxSDKSampleApp-Prefix.pch";
+				GCC_PREFIX_HEADER = "BoxSDKSampleApp/SpaceTime-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)";
-				INFOPLIST_FILE = "BoxSDKSampleApp/BoxSDKSampleApp-Info.plist";
+				INFOPLIST_FILE = "BoxSDKSampleApp/SpaceTime-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SpaceTime;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -575,7 +589,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E4FADA38172CFE480052AD11 /* Build configuration list for PBXProject "BoxSDKSampleApp" */ = {
+		E4FADA38172CFE480052AD11 /* Build configuration list for PBXProject "SpaceTime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4FADA58172CFE480052AD11 /* Debug */,
@@ -584,7 +598,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4FADA5A172CFE480052AD11 /* Build configuration list for PBXNativeTarget "BoxSDKSampleApp" */ = {
+		E4FADA5A172CFE480052AD11 /* Build configuration list for PBXNativeTarget "SpaceTime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4FADA5B172CFE480052AD11 /* Debug */,
