@@ -82,7 +82,8 @@ def index(request):
     cur = con.cursor()
     sql_insert = """INSERT IGNORE INTO user_location(macaddress, location_id) VALUES ("""+"'"+ macaddress+ "'" +""","""+location+""")"""
     sql_lookup = "Select * from user_location where macaddress = " + "'" + macaddress + "'" + " and location_id =" + location    
-    sql_location = "Select name from location where id =" + location    
+    sql_location = "Select name from location where id =" + location
+    sql_number = "Select telefonnr from user a where a.macaddress =" + macaddress    
     with con:
         cur.execute(sql_lookup)
         if len(cur.fetchall())==0:
@@ -94,8 +95,11 @@ def index(request):
             for row in rows:
                 files.append(row[0])
 
+            cur.execute(sql_number)
+            number = cur.fetchall()[0][0]         
+            
             #url = 'http://sms77.de/gateway/?u=eVoDesign&p=19058c741457f13eb397607f6d4d56d5&to=00491608071336&text=Sie wurden fuer die Location+' + row[0] + '+freigeschaltet&type=quality&from=spacetime'
-            url = 'https://tropo.developergarden.com/api/sessions?action=create&token=4e427865446b4f6f77466e4b4a786d61536b626d57556b625a4472414664424950614671495453614a494c71&msg=Sie wurden fuer die Location+' + row[0] + '+freigeschaltet spacetime-box://zuhause/&number=4917699664428'
+            url = 'https://tropo.developergarden.com/api/sessions?action=create&token=4e427865446b4f6f77466e4b4a786d61536b626d57556b625a4472414664424950614671495453614a494c71&msg=Die Location  ' + row[0] + ' wurde freigeschaltet spacetime-box://zuhause/&number='+number
             print url
             requests.get(url)
             #print test.text
